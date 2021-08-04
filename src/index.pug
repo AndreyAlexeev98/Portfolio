@@ -1,0 +1,95 @@
+include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Portfolio | main page
+  body
+    .wrapper
+      .welcome-section
+        section.hero
+          .container
+              header.header
+                .header__logo
+                  .logo АА 
+                .header__tabs
+                  nav.nav
+                    - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться со мной"];
+                    ul.nav__list
+                      each item in items
+                       li.nav__item
+                          a(href='#').nav__link #{item}
+                .header__links
+                  - var icons = ["insta", "vk", "github"];
+                  ul.socials
+                    each item in icons
+                      li.socials__item 
+                        a(href='').socials__link
+                          +icon(item, 'socials__icon')
+              .hero__content
+                .user-data-desc
+                  .user-data-desc__first Личный сайт
+                  .user-data-desc__second веб разработчика
+                h1.user-data-name Алексеев Андрей
+              .hero__bottom-btn
+                a(href='#').scroll-down-btn Скролл  
+                  +icon('scroll', 'scroll-down-btn__pic') 
+        section.section-about
+          .container
+            .about
+              .about__user-data
+                .user-info
+                  .user-info__avatar
+                    .avatar 
+                      +image('content/aa.jpg', 'avatar__img')
+                  .user-info__content 
+                    -
+                      var userdata = [
+                        ['проживаю', 'Санкт-Петербург'],
+                        ['возраст', '26 лет'],
+                        ['семейное положение', 'Женат']
+                      ];
+                    table.table.user-info__data 
+                      tbody.user-info__data-body
+                        each row in userdata
+                          tr 
+                            td #{row[0]} 
+                            td #{row[1]}
+              .about__content
+                .about__disclaimer Привет! Меня зовут
+                h2.about__title Андрей Алексеев
+                .about__desc 
+                  p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                .about__postscriptum
+                  p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        section.values-section 
+          section.triangles.values-section__triangles 
+            svg(viewBox='0 0 1000 100' PreserveAspectRatio='none').triangles__item.triangle
+              polygon(points='0, 0 0,100 1000, 100')
+            svg(viewBox='0 0 1000 100' PreserveAspectRatio='none').triangles__item.triangle
+              polygon(points='1000, 0 1000,100 0, 100')
+          section.values-section__content 
+            -
+              var items = [
+                ["Front-end", ["HTML", "CSS", "JS", "VUE 3"]],
+                ["Workfrow", ["GIT", "Terminal", "WebPack", "Yarn"]],
+              ];
+            ul.skills-list  
+              each row in items 
+                li.skills-list__item.skills-row
+                  .skills-row__title #{row[0]}
+                  ul.skills-row__list
+                    each cell in row[1]
+                      li.skills-row__item
+                        .slill
+                          .skill__circle
+                          .skill__circle
+                          .skill__title= cell
+          
+    //- +image('content/user.jpg', 'user-pic')
+    //- +icon('link', 'link-class')
+    //- .icon-bg
+        
