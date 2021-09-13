@@ -10,34 +10,38 @@ html(lang="ru")
   body
     .wrapper
       .welcome-section
-        section.hero
+        .parallax
+          .parallax__layout 
+            +image('content/paralax-test.png', 'parallax__image')
+            //- заменить image на picture, чтобы добавить нресколько картинок под разное расширение
+        section.hero#hero
           .container
               header.header
                 .header__logo
                   .logo АА 
                 .header__tabs
                   nav.nav
-                    - var items = ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться со мной"];
+                    - var items = [["Главная","hero"], ["Обо мне","about"], ["Навыки","values-sec"], ["Работы","#"], ["Отзывы","#"], ["Связаться со мной","#"]];
                     ul.nav__list
                       each item in items
-                       li.nav__item
-                          a(href='#').nav__link #{item}
+                        li.nav__item
+                          a(href='#'+item[1]).nav__link #{item[0]}
                 .header__links
-                  - var icons = ["insta", "vk", "github"];
+                  - var icons = [["insta", "https://github.com/AndreyAlexeev98"], ["vk", "https://www.linkedin.com/comm/in/%D0%B0%D0%BD%D0%B4%D1%80%D0%B5%D0%B9-%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2"], ["github", "https://t.me/AndreyAlexeev98"]];
                   ul.socials
                     each item in icons
                       li.socials__item 
-                        a(href='').socials__link
-                          +icon(item, 'socials__icon')
+                        a(href=item[1],target='_blank').socials__link
+                          +icon(item[0], 'socials__icon')
               .hero__content
                 .user-data-desc
                   .user-data-desc__first Личный сайт
                   .user-data-desc__second веб разработчика
                 h1.user-data-name Алексеев Андрей
               .hero__bottom-btn
-                a(href='#').scroll-down-btn Скролл  
+                a(href='#about').scroll-down-btn Скролл  
                   +icon('scroll', 'scroll-down-btn__pic') 
-        section.section-about
+        section.section-about#about
           .container
             .about
               .about__user-data
@@ -65,7 +69,7 @@ html(lang="ru")
                   p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                 .about__postscriptum
                   p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        section.values-section 
+      section.values-section#values-sec
           section.triangles.values-section__triangles 
             svg(viewBox='0 0 1000 100' PreserveAspectRatio='none').triangles__item.triangle
               polygon(points='0, 0 0,100 1000, 100')
