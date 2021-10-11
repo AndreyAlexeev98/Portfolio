@@ -1,0 +1,65 @@
+.skills {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+    margin-left: auto;
+    position: relative; 
+}
+
+.skills__title {
+    display: inline;
+}
+
+.skills__list {
+    display: flex;
+    justify-content: end;
+}
+
+.skills__item {
+    width: 140px;
+}
+
+.skill {
+  position: relative;
+}
+
+circle:nth-child(2) {
+  stroke-dasharray: 502.4;
+  stroke-width: 20PX;
+  stroke: url(#gradient);
+  transform: rotate(180deg);
+  transform-origin: 50% 50%;
+  animation: skillProgress 100s linear infinite;
+  animation-play-state: paused;
+}
+
+.skill__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba($links-color, 0.5);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+@keyframes skillProgress {
+  0% {
+    stroke-dashoffset: 502.4;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+circle {
+  fill: darkgrey;
+}
+
+.skills__list:not(:last-child) {
+  margin-bottom: 50px;
+}

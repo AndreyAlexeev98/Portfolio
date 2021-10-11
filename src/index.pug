@@ -9,7 +9,7 @@ html(lang="ru")
     title Portfolio | main page
   body
     .wrapper
-      .welcome-section
+      .welcome-section#welcome-sec
         .parallax
           .parallax__layout 
             +image('content/paralax-test.png', 'parallax__image')
@@ -70,30 +70,112 @@ html(lang="ru")
                 .about__postscriptum
                   p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
       section.values-section#values-sec
-          section.triangles.values-section__triangles 
-            svg(viewBox='0 0 1000 100' PreserveAspectRatio='none').triangles__item.triangle
-              polygon(points='0, 0 0,100 1000, 100')
-            svg(viewBox='0 0 1000 100' PreserveAspectRatio='none').triangles__item.triangle
-              polygon(points='1000, 0 1000,100 0, 100')
-          section.values-section__content 
-            -
-              var items = [
-                ["Front-end", ["HTML", "CSS", "JS", "VUE 3"]],
-                ["Workfrow", ["GIT", "Terminal", "WebPack", "Yarn"]],
-              ];
-            ul.skills-list  
-              each row in items 
-                li.skills-list__item.skills-row
-                  .skills-row__title #{row[0]}
-                  ul.skills-row__list
-                    each cell in row[1]
-                      li.skills-row__item
-                        .slill
-                          .skill__circle
-                          .skill__circle
-                          .skill__title= cell
-          
+          section.values-section__content#values-sec
+            .values__content
+              +image('content/bg-chem-polezen.png', 'values-section__bg')
+              .values__header   
+                h2.title.values__title Чем я могу быть вам полезен
+                p.values__description Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam id porro ut! Repellat, excepturi nisi? Adipisci distinctio ipsum excepturi perferendis! Dolores adipisci eum incidunt modi. Placeat suscipit iste assumenda tenetur.
+              .container.values__description
+                -
+                  var skills = [
+                    ["Front-end", ["HTML", "CSS", "JS", "VUE 3"], [85,71,50,65]],
+                    ["Workfrow", ["GIT", "Terminal", "WebPack", "Yarn"],[60,50,45,38]],
+                  ];
+                include ./mixins
+                .skills 
+                  each group in skills  
+                    .skills__title= group[0]
+                    ul.skills__list 
+                      each skill, index in group[1]
+                        li.skills__item 
+                          +skill(group[2][index], skill)
+                  svg(style='width:0; heigth:0; position: absolute;' aria-hidden='true')
+                    linearGradient(id='gradient' x1='0%' y1='0%' x2='100%', y2='0')
+                      stop(offset='0%' stop-color='#4a00ed')
+                      stop(offset='100%' stop-color='#9308e8')
+              .valuses-section-pic
+                +image('content/hand.png', 'valuses-section-img')
+      section.my-works#my-works-sec 
+        .container
+          h3.my-works__title Мои работы
+          .slider
+            .slider-view 
+              .slider-view__number 2
+              +image('content/slider-preview.png', 'slider-view__preview-img')
+              +image('content/sliders.png', 'slider-view__img')
+            .slider-desc 
+              ul.slider-desc__skills
+                li.slider-desc__skill HTML
+                li.slider-desc__skill CSS
+                li.slider-desc__skill JavaScript 
+              h4.slider-desc__title Сайт школы образования
+              .slider-desc__info Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ut reiciendis cum, nihil atque veniam.
+              a.slider-desc__link
+                +icon('link', 'slider-desc__link-img')
+                .slider-desc__link-text Посмотреть сайт
+      section.feedback-sec
+        +image('content/bg-reviews.png', 'feedback-sec__bg')  
+        .container
+          section.reviews#reviews-sec 
+            .reviews__top
+              h3.reviews__title Что обо мне говорят
+              .arrow 
+                btn.arrow__left
+                  +icon('arrow-down', 'arrow-left')
+                btn.arrow__right
+                  +icon('arrow-down', 'arrow-rigth')
+            .reviews__content   
+              .reviews__slider 
+                .review
+                  .review__quote
+                    +icon('quote', 'review__quote-icon')
+                  .review__desc 
+                    .review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 7 месяцев только самых тяжелых испытаний и бессонных ночей!
+                    .review__autor
+                      .review__autor-avatar
+                        +image('content/reviews_autor-1.png', 'review__autor-avatar-img')
+                      .review__autor-info
+                        .review__autor-title Ковальчук Дмитрий
+                        .review__autor-subtitle Основатель LoftSchool
+                .review
+                  .review__quote
+                    +icon('quote', 'review__quote-icon')
+                  .review__desc 
+                    .review__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах.
+                    .review__autor
+                      .review__autor-avatar
+                        +image('content/reviews_autor-2.png', 'review__autor-avatar-img')
+                      .review__autor-info
+                        .review__autor-title Владимир Сабанцев
+                        .review__autor-subtitle Старший преподаватель
+          section.feedback-sec__form#feedback-sec-form
+            h3.feedback-sec__title.reviews__title Связаться со мной
+            form.form(action="#")
+              .form__row
+                label.label-input(for="inputName")
+                  .label-input__icon
+                      +icon('user', '')
+                  .label-input__data 
+                    .label-input__title Введите ваше имя
+                    input(type="text", required)#inputName.label-input__value
+                label.label-input(for="inputEmail")
+                    .label-input__icon
+                        +icon('mail', '')
+                    .label-input__data 
+                      .label-input__title Введите ваш email
+                      input(type="email", required)#inputEmail.label-input__value
+              .form__row
+                label.label-input(for="textarea")
+                  .label-input__icon
+                      +icon('message', '')
+                  .label-input__data 
+                    .label-input__title Сообщение к письму
+                    textarea#textarea.label-input__value
+              .form__row
+                input(type="submit", value='Отправить')   
+
     //- +image('content/user.jpg', 'user-pic')
-    //- +icon('link', 'link-class')
+    //- +icon('name', 'link-class')
     //- .icon-bg
         

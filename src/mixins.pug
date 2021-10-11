@@ -5,3 +5,25 @@ mixin icon(name, className)
 
 mixin image(path, className)
   img(src=require(`images/${path}`).default class=className)
+
+mixin skill(percent, text)
+  .skill 
+    svg(viewBox='0 0 200 200')
+      circle.lol(
+        cx='100'
+        cy='100'
+        r='80'
+        fill='darkgrey'
+        stroke='#e9e9e9'
+        stroke-width='10px'
+      )
+      circle(
+        cx='100'
+        cy='100'
+        r='80'
+        stroke-dasharray='502.4'
+        stroke-width='20PX'
+        stroke='url(#gradient)'
+        style=`animation-delay: -${percent}s`
+      )
+    .skill__title #{text}
