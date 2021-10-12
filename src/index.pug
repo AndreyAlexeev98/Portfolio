@@ -20,19 +20,9 @@ html(lang="ru")
                 .header__logo
                   .logo АА 
                 .header__tabs
-                  nav.nav
-                    - var items = [["Главная","hero"], ["Обо мне","about"], ["Навыки","values-sec"], ["Работы","#"], ["Отзывы","#"], ["Связаться со мной","#"]];
-                    ul.nav__list
-                      each item in items
-                        li.nav__item
-                          a(href='#'+item[1]).nav__link #{item[0]}
+                  +navigation
                 .header__links
-                  - var icons = [["insta", "https://github.com/AndreyAlexeev98"], ["vk", "https://www.linkedin.com/comm/in/%D0%B0%D0%BD%D0%B4%D1%80%D0%B5%D0%B9-%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2"], ["github", "https://t.me/AndreyAlexeev98"]];
-                  ul.socials
-                    each item in icons
-                      li.socials__item 
-                        a(href=item[1],target='_blank').socials__link
-                          +icon(item[0], 'socials__icon')
+                  +socials
               .hero__content
                 .user-data-desc
                   .user-data-desc__first Личный сайт
@@ -174,6 +164,29 @@ html(lang="ru")
                     textarea#textarea.label-input__value
               .form__row
                 input(type="submit", value='Отправить')   
+      footer.footer 
+        .container.footer__container
+          .footer__left 
+            .footer__copy &#169; 2021
+            .footer__my-name Алексеев Андрей
+            .footer__site-name 
+              span Личный сайт 
+              span веб-разработчика
+          .footer__right
+              +navigation
+              .footer__bottom 
+                .footer__desc-wrap 
+                  .footer__desc Этот сайт я сделал в рамках обучения в школе онлайн образования Loftschool
+                  .footer__socials 
+                    +socials 
+                .footer__quote-wrap 
+                  .footer__quote Всегда пишите код так, будто сопровождать его будет склонный к насилию прихопат, который знает где вы живете
+                  .footer__quote-autor Marthin Golding
+            
+
+
+
+
 
     //- +image('content/user.jpg', 'user-pic')
     //- +icon('name', 'link-class')
