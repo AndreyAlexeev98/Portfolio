@@ -6,6 +6,8 @@ mixin icon(name, className)
 mixin image(path, className)
   img(src=require(`images/${path}`).default class=className)
 
+//- start skills stelios
+
 mixin skill(percent, text)
   .skill 
     svg(viewBox='0 0 200 200')
@@ -28,6 +30,8 @@ mixin skill(percent, text)
       )
     .skill__title #{text}
 
+//- finish skills stelios
+
 mixin navigation
   nav.nav
     - var items = [["Главная","hero"], ["Обо мне","about"], ["Навыки","values-sec"], ["Работы","#"], ["Отзывы","#"], ["Связаться со мной","#"]];
@@ -43,3 +47,26 @@ mixin socials
         li.socials__item 
           a(href=item[1],target='_blank').socials__link
             +icon(item[0], 'socials__icon')
+
+
+
+
+mixin sabancev-skills 
+  .values__widget
+    .values__widget-container 
+      ul.skills 
+        each item in ['frontend','backend']
+          li.skills__item
+            .skills-row 
+              .skills-row__title #{item}
+              ul.skills-row__list
+                each tech in ['html', 'css', 'vue']
+                  li.skills-row__item
+                    .skill 
+                      svg(viewBox='0 0 100 100').skill__circle-shape
+                        circle(cx='50' cy='50' r='40').skill__circle.skill__circle-under
+                        circle(cx='50' cy='50' r='40' stroke='url(#gradient)' transform='rotate(100 50 50)').skill__circle.skill__circle-above
+                        linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='0%')
+                          stop(offset='0%' stop-color='#4a00ed')
+                          stop(offset='100%' stop-color='#9308e8')
+                      .skill__circle-text #{tech}

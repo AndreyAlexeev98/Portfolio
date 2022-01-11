@@ -1,4 +1,4 @@
-.skills {
+/* .skills {
     margin-right: 50px;
     display: flex;
     flex-direction: column;
@@ -62,4 +62,104 @@ circle {
 
 .skills__list:not(:last-child) {
   margin-bottom: 50px;
+} */
+
+
+/* start skill styles skills sabantcev */
+
+.values__widget-container {
+    display: flex;
+}
+
+.skill {
+  position: relative;
+  width: 166px;
+  height: 166px;
+
+  @include tablets {
+    width: 135px;
+    height: 135px;
+  }
+}
+
+.skill__circle {
+  fill: #000;
+}
+
+.skill__circle.skill__circle-under {
+  stroke: #eaeaea;
+  stroke-width: 5px;
+}
+  
+
+.skill__circle.skill__circle-above {
+  stroke-dashoffset: 1;
+  stroke-dasharray: 300;
+  stroke-width: 6PX;
+  stroke: url(#gradient);
+  transform: rotate(180deg);
+  transform-origin: 50% 50%;
+  animation: skillProgress 100s linear infinite;
+  animation-play-state: paused;
+}
+
+.skill__circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 18px;
+  color: rgba($text-color, .5);
+  padding: 14px;
+
+  @include phones {
+    font-size: 16px;
+  }
+}
+
+.skills-row__title {
+  margin-bottom: 26px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.skills-row__list {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left: -4%;
+  @include phones {
+    justify-content: center;
+  }
+}
+
+.skills-row__item {
+  margin-left: 4%;
+}
+
+.skills {
+  margin-left: auto;
+  margin-right: 50px;
+  @include phones {
+    text-align: center;
+  }
+}
+
+.skills__item {
+  margin-bottom: 30px;
+}
+
+
+.skills-row__title {
+    position: relative;
+}
+
+
+@keyframes skillProgress {
+  0% {
+    stroke-dashoffset: 502.4;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
 }

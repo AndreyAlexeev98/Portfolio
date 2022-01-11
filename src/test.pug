@@ -1,0 +1,18 @@
+.container.values__description
+  -
+    var skills = [
+      ["Front-end", ["HTML", "CSS", "JS", "VUE 3"], [85,71,50,65]],
+      ["Workfrow", ["GIT", "Terminal", "WebPack", "Yarn"],[60,50,45,38]],
+    ];
+  include ./mixins
+  .skills 
+    each group in skills  
+      .skills__title= group[0]
+      ul.skills__list 
+        each skill, index in group[1]
+          li.skills__item 
+            +skill(group[2][index], skill)
+    svg(style='width:0; heigth:0; position: absolute;' aria-hidden='true')
+      linearGradient(id='gradient' x1='0%' y1='0%' x2='100%', y2='0')
+        stop(offset='0%' stop-color='#4a00ed')
+        stop(offset='100%' stop-color='#9308e8')
