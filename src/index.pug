@@ -11,9 +11,11 @@ html(lang="ru")
     .wrapper
       .welcome-section#welcome-sec
         .parallax
+          picture.parallax__layer
+            source(type='image/jpg' srcset=require('images/content/aa.jpg').default)
           .parallax__layout 
             +image('content/paralax-test.png', 'parallax__image')
-            //- заменить image на picture, чтобы добавить нресколько картинок под разное расширение
+            //- заменить image на picture, чтобы добавить нресколько картинок под разное расширение 
         section.hero#hero
           .container
               header.header
@@ -75,24 +77,6 @@ html(lang="ru")
           .section-title.works__section-title Мои работы
           .works__content
             #slider-component
-      //- section.my-works#my-works-sec 
-      //-   .container
-      //-     h3.my-works__title Мои работы
-      //-     .slider
-      //-       .slider-view 
-      //-         .slider-view__number 2
-      //-         +image('content/slider-preview.png', 'slider-view__preview-img')
-      //-         +image('content/sliders.png', 'slider-view__img')
-      //-       .slider-desc 
-      //-         ul.slider-desc__skills
-      //-           li.slider-desc__skill HTML
-      //-           li.slider-desc__skill CSS
-      //-           li.slider-desc__skill JavaScript 
-      //-         h4.slider-desc__title Сайт школы образования
-      //-         .slider-desc__info Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ut reiciendis cum, nihil atque veniam.
-      //-         a.slider-desc__link
-      //-           +icon('link', 'slider-desc__link-img')
-      //-           .slider-desc__link-text Посмотреть сайт
       section.feedback-sec
         +image('content/bg-reviews.png', 'feedback-sec__bg')  
         .container
