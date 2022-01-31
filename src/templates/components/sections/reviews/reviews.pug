@@ -1,0 +1,55 @@
+script(type='text/x-template')#reviews-components
+  section.reviews#reviews-sec
+    .reviews__top
+      h3.reviews__title Что обо мне говорят
+      .arrow 
+        button(@click='previous').arrow__left
+          +icon('arrow-down', 'arrow-left')
+        button(@click='next' ).arrow__right
+          +icon('arrow-down', 'arrow-rigth')
+    .reviews__content  
+      carousel(:navigationEnabled="true").reviews__slider
+        slide.review
+          .review__quote
+            +icon('quote', 'review__quote-icon')
+          .review__desc 
+            .review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 7 месяцев только самых тяжелых испытаний и бессонных ночей!
+            .review__autor
+              .review__autor-avatar
+                +image('content/reviews_autor-1.png', 'review__autor-avatar-img')
+              .review__autor-info
+                .review__autor-title Ковальчук Дмитрий
+                .review__autor-subtitle Основатель LoftSchool
+        slide.review
+          .review__quote
+            +icon('quote', 'review__quote-icon')
+          .review__desc 
+            .review__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах.
+            .review__autor
+              .review__autor-avatar
+                +image('content/reviews_autor-2.png', 'review__autor-avatar-img')
+              .review__autor-info
+                .review__autor-title Владимир Сабанцев
+                .review__autor-subtitle Старший преподаватель
+        slide.review
+          .review__quote
+            +icon('quote', 'review__quote-icon')
+          .review__desc 
+            .review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 7 месяцев только самых тяжелых испытаний и бессонных ночей!
+            .review__autor
+              .review__autor-avatar
+                +image('content/reviews_autor-1.png', 'review__autor-avatar-img')
+              .review__autor-info
+                .review__autor-title Ковальчук Дмитрий
+                .review__autor-subtitle Основатель LoftSchool
+        slide.review
+          .review__quote
+            +icon('quote', 'review__quote-icon')
+          .review__desc 
+            .review__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах.
+            .review__autor
+              .review__autor-avatar
+                +image('content/reviews_autor-2.png', 'review__autor-avatar-img')
+              .review__autor-info
+                .review__autor-title Владимир Сабанцев
+                .review__autor-subtitle Старший преподаватель
