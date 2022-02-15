@@ -4,5 +4,20 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 77px 1%;
+  padding: 20px 1%;
+  &__logo {
+    width: 65px;
+    height: 65px;
+    fill: #f5deb3;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__tabs {
+    display: none;
+  }
+  .header__links {
+    margin-left: auto;
+    margin-right: 55px;
+  }
 }

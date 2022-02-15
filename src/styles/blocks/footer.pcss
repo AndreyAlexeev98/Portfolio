@@ -54,7 +54,7 @@
 }
 
 .footer__socials .socials__item {
-    border: 1px solid grey;
+    border: 1px solid #f5deb3;
     border-radius: 50%;
     padding: 15px;
     max-width: inherit;
@@ -65,10 +65,60 @@
     flex-direction: column;
 }
 
+.footer__quote {
+    color: #fff;
+}
+
 .footer__quote-autor {
     margin-top: auto;
     color: #fff;
     font-weight: 300;
     font-style: italic;
     font-family: 'Open Sans';
+    text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        &__left div {
+            margin-bottom: 10px;
+        }
+        &__right {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .nav__list {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+        .footer__bottom {
+            flex-wrap: wrap;
+        }
+        .footer__socials {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer {
+        &__left {
+            margin-right: 0;
+        }
+        &__container{
+           flex-wrap: wrap;
+        }
+        .nav__list {
+            max-width: 65vw;
+            justify-content: space-between;
+        }
+        .nav__item {
+            margin-right: 0;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        &__right>.nav {
+            margin-bottom: 18px;
+        }
+    }
 }

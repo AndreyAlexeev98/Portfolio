@@ -53,6 +53,24 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 384px;
+  width: 25%;
   height: 700px;
+}
+
+@media screen and (max-width: 768px) {
+  .values__header {
+    width: auto;
+    text-align: center;
+  }
+  .valuses-section-pic { 
+    display: none;
+  }
+  .skills {
+    margin: 0 auto;
+  } 
+  .skills-row__list {
+    flex-wrap: wrap;
+    margin-left: 0;
+    justify-content: space-around;
+  } 
 }

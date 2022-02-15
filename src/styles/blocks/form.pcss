@@ -1,5 +1,3 @@
-
-
 .form {
     display: flex;
     width: 80vw;
@@ -19,6 +17,7 @@
     display: flex;
     align-items: end;
     color: #626365;
+    color: tan;
     border-bottom: 2px solid;
     padding-bottom: 15px;
     flex: 1;
@@ -31,7 +30,7 @@
 .label-input__icon {
     width: 26px;
     height: 26px;
-    fill: #626365;
+    fill: tan;
     margin-right: 16px;
 }
 
@@ -42,8 +41,6 @@
 .label-input__title {
     margin-bottom: 24px;
 }
-
-
 
 .label-input__value {
     background-color: transparent;
@@ -60,4 +57,14 @@ input[type="submit"] {
     background-color: #ef8400;
     color: #fefefe;
     border: none;
+}
+
+@media screen and (max-width: 768px) {
+    .form__row:not(:last-child) {
+       flex-direction: column;
+    }
+    .label-input:not(:last-child) {
+        margin-bottom: 40px;
+        margin-right: 0;
+    }
 }

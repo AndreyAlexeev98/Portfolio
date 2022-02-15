@@ -4,43 +4,43 @@
     "skills": [
       {
         "id": 1,
-        "title": "html5",
+        "title": "HTML5 (Pug)",
         "percent": 30
       },
       {
         "id": 2,
-        "title": "css3",
+        "title": "CSS3 (Stylus, PostCSS, SCSS)",
         "percent": 50
       },
       {
         "id": 3,
-        "title": "JavaScript",
+        "title": "JavaScript ES6+",
         "percent": 80
+      },
+      {
+        "id": 4,
+        "title": "VUE",
+        "percent": 71
       }
     ]
   },
   {
-    "title": "Backend",
+    "title": "Workflow",
     "skills": [
       {
-        "id": 4,
-        "title": "php",
+        "id": 5,
+        "title": "GIT",
         "percent": 30
       },
       {
-        "id": 5,
-        "title": "mySql",
+        "id": 6,
+        "title": "NPM, Yarn",
         "percent": 60
       },
       {
-        "id": 6,
-        "title": "Node.js & npm",
-        "percent": 45
-      },
-      {
         "id": 7,
-        "title": "Mongo.db",
-        "percent": 70
+        "title": "GULP, WebPack",
+        "percent": 45
       }
     ]
   }

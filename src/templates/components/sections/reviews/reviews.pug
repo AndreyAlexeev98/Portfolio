@@ -8,7 +8,7 @@ script(type='text/x-template')#reviews-components
         button(@click='next' ).arrow__right
           +icon('arrow-down', 'arrow-rigth')
     .reviews__content  
-      carousel(:navigationEnabled="true").reviews__slider
+      carousel(:navigationEnabled="true", :perPageCustom="[[180, 1],[480, 1], [768, 2]]").reviews__slider
         slide.review
           .review__quote
             +icon('quote', 'review__quote-icon')
@@ -42,6 +42,28 @@ script(type='text/x-template')#reviews-components
               .review__autor-info
                 .review__autor-title Ковальчук Дмитрий
                 .review__autor-subtitle Основатель LoftSchool
+        slide.review
+          .review__quote
+            +icon('quote', 'review__quote-icon')
+          .review__desc 
+            .review__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах.
+            .review__autor
+              .review__autor-avatar
+                +image('content/reviews_autor-2.png', 'review__autor-avatar-img')
+              .review__autor-info
+                .review__autor-title Владимир Сабанцев
+                .review__autor-subtitle Старший преподаватель
+        slide.review
+          .review__quote
+            +icon('quote', 'review__quote-icon')
+          .review__desc 
+            .review__text Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах.
+            .review__autor
+              .review__autor-avatar
+                +image('content/reviews_autor-2.png', 'review__autor-avatar-img')
+              .review__autor-info
+                .review__autor-title Владимир Сабанцев
+                .review__autor-subtitle Старший преподаватель
         slide.review
           .review__quote
             +icon('quote', 'review__quote-icon')

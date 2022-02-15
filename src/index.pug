@@ -19,19 +19,29 @@ html(lang="ru")
         section.hero#hero
           .container
               header.header
-                .header__logo
-                  .logo АА 
+                a(href="#about").header__logo
+                  +icon('myLogo', 'logo') 
                 .header__tabs
-                  +navigation
+                  +navigation()
                 .header__links
                   +socials
+                .header__hamburger-menu.hamburger-menu#hamburger-menu
+                  span.hamburger-menu__line
+                  span.hamburger-menu__line
+                  span.hamburger-menu__line
+                .nav-mobile#nav-mobile
+                  .nav-mobile__header
+                    a(href="#about").header__logo.nav__link
+                      +icon('myLogo', 'logo') 
+                  .nav-mobile__body
+                    +navigation("nav--mob")
               .hero__content
                 .user-data-desc
                   .user-data-desc__first Личный сайт
                   .user-data-desc__second веб разработчика
                 h1.user-data-name Алексеев Андрей
               .hero__bottom-btn
-                a(href='#about').scroll-down-btn Скролл  
+                a(href='#about').scroll-down-btn Далее 
                   +icon('scroll', 'scroll-down-btn__pic') 
         section.section-about#about
           .container
@@ -60,24 +70,29 @@ html(lang="ru")
                 .about__desc 
                   p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
                 .about__postscriptum
-                  p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+                  p Влюблен в WEB технологии с 2019 года. Интересуюсь разработкой современного веб-дзайна. Прочитал книги: 
+                  ul 
+                    li - Дизайн пользовательского интерфейса - Искусство мыть слона;
+                    li - Хороший интерфейс - невидимый интерфейс;
+                    li - Не заставляйте меня думать. Веб-юзабилити и здравый смысл;
+                    li - UX-дизайн. Практическое руководство по проектированию опыта взаимодействия;
       section.values-section#values-sec
           section.values-section__content#values-sec
             .values__content
               +image('content/bg-chem-polezen.png', 'values-section__bg')
               .values__header   
                 h2.title.values__title Чем я могу быть вам полезен
-                p.values__description Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam id porro ut! Repellat, excepturi nisi? Adipisci distinctio ipsum excepturi perferendis! Dolores adipisci eum incidunt modi. Placeat suscipit iste assumenda tenetur.
+                p.values__description Работаю в вебе с 2020 года. Занимал должности верстальщика, веб-мастера, инженера тех поддержки в продуктовой компании. Прошел курсы в одной из замых зарекомендовавших себя онлайн-школ LoftSchool (Вертска, JS, VUE), а так же закончил комплексный курс от Coursera (Front-end developer)  
               .container.values__description
                 #skills-component
               .valuses-section-pic
                 +image('content/hand.png', 'valuses-section-img')
-      section.works
+      section.works#works-sec
         .container.works__container
           .section-title.works__section-title Мои работы
           .works__content
             #slider-component
-      section.feedback-sec
+      section.feedback-sec#feedback-sec
         +image('content/bg-reviews.png', 'feedback-sec__bg')  
         .container
           div#reviews-comp-include
@@ -95,8 +110,8 @@ html(lang="ru")
                     .label-input__icon
                         +icon('mail', '')
                     .label-input__data 
-                      .label-input__title Введите ваш email
-                      input(type="email", required)#inputEmail.label-input__value
+                      .label-input__title Введите ваш email/t.me/telephone
+                      input(type="text", required)#inputEmail.label-input__value
               .form__row
                 label.label-input(for="textarea")
                   .label-input__icon
@@ -109,22 +124,21 @@ html(lang="ru")
       footer.footer 
         .container.footer__container
           .footer__left 
-            .footer__copy &#169; 2021
+            .footer__copy &#169; 2022
             .footer__my-name Алексеев Андрей
             .footer__site-name 
               span Личный сайт 
               span веб-разработчика
           .footer__right
-              +navigation
+              +navigation()
               .footer__bottom 
                 .footer__desc-wrap 
-                  .footer__desc Этот сайт я сделал в рамках обучения в школе онлайн образования Loftschool
+                  .footer__desc Если вас заинтересовало сотрудниество, свяжитесь со мной любым удобрым способом:
                   .footer__socials 
                     +socials 
                 .footer__quote-wrap 
                   .footer__quote Всегда пишите код так, будто сопровождать его будет склонный к насилию прихопат, который знает где вы живете
                   .footer__quote-autor Marthin Golding
-            
     include ./templates/entry.pug
 
 

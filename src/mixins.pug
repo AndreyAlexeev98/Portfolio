@@ -32,41 +32,18 @@ mixin skill(percent, text)
 
 //- finish skills stelios
 
-mixin navigation
-  nav.nav
-    - var items = [["Главная","hero"], ["Обо мне","about"], ["Навыки","values-sec"], ["Работы","#"], ["Отзывы","#"], ["Связаться со мной","#"]];
+mixin navigation(dl_class)
+  nav(class = 'nav', class = dl_class)
+    - var items = [["Обо мне","about"], ["Навыки","values-sec"], ["Работы","works-sec"], ["Отзывы","feedback-sec"], ["Связаться со мной","feedback-sec-form"]];
     ul.nav__list
       each item in items
         li.nav__item
           a(href='#'+item[1]).nav__link #{item[0]}
 
 mixin socials 
-  - var icons = [["insta", "https://github.com/AndreyAlexeev98"], ["vk", "https://www.linkedin.com/comm/in/%D0%B0%D0%BD%D0%B4%D1%80%D0%B5%D0%B9-%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2"], ["github", "https://t.me/AndreyAlexeev98"]];
+  - var icons = [["github__1", "https://github.com/AndreyAlexeev98"], ["linkedin", "https://www.linkedin.com/comm/in/%D0%B0%D0%BD%D0%B4%D1%80%D0%B5%D0%B9-%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B5%D0%B5%D0%B2"], ["telegram", "https://t.me/AndreyAlexeev98"]];
     ul.socials
       each item in icons
         li.socials__item 
           a(href=item[1],target='_blank').socials__link
             +icon(item[0], 'socials__icon')
-
-
-
-
-mixin sabancev-skills 
-  .values__widget
-    .values__widget-container 
-      ul.skills 
-        each item in ['frontend','backend']
-          li.skills__item
-            .skills-row 
-              .skills-row__title #{item}
-              ul.skills-row__list
-                each tech in ['html', 'css', 'vue']
-                  li.skills-row__item
-                    .skill 
-                      svg(viewBox='0 0 100 100').skill__circle-shape
-                        circle(cx='50' cy='50' r='40').skill__circle.skill__circle-under
-                        circle(cx='50' cy='50' r='40' stroke='url(#gradient)' transform='rotate(100 50 50)').skill__circle.skill__circle-above
-                        linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='0%')
-                          stop(offset='0%' stop-color='#4a00ed')
-                          stop(offset='100%' stop-color='#9308e8')
-                      .skill__circle-text #{tech}
