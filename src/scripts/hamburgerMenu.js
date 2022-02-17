@@ -2,7 +2,7 @@ let burger = document.querySelector('.header__hamburger-menu');
 let overlay = document.querySelector('#nav-mobile');
 let body = document.querySelector('body');
 
-let links = document.querySelectorAll('.nav__link');
+let links = document.querySelectorAll('.nav__link--mobile');
 
 links.forEach(function(element){
   element.addEventListener('click' , toggleMenu);

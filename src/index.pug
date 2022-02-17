@@ -31,10 +31,10 @@ html(lang="ru")
                   span.hamburger-menu__line
                 .nav-mobile#nav-mobile
                   .nav-mobile__header
-                    a(href="#about").header__logo.nav__link
+                    a(href="#about").header__logo.nav__link.nav__link--mobile 
                       +icon('myLogo', 'logo') 
                   .nav-mobile__body
-                    +navigation("nav--mob")
+                    +navigation("nav--mob","nav__link--mobile")
               .hero__content
                 .user-data-desc
                   .user-data-desc__first Личный сайт
@@ -98,27 +98,27 @@ html(lang="ru")
           div#reviews-comp-include
           section.feedback-sec__form#feedback-sec-form
             h3.feedback-sec__title.reviews__title Связаться со мной
-            form.form(action="#")
+            form.form(enctype="multipart/form-data" method="post" id="form" onsubmit="send(event, 'send.php')")
               .form__row
                 label.label-input(for="inputName")
                   .label-input__icon
                       +icon('user', '')
                   .label-input__data 
                     .label-input__title Введите ваше имя
-                    input(type="text", required)#inputName.label-input__value
+                    input(type="text" name="name" required)#inputName.label-input__value
                 label.label-input(for="inputEmail")
                     .label-input__icon
                         +icon('mail', '')
                     .label-input__data 
                       .label-input__title Введите ваш email/t.me/telephone
-                      input(type="text", required)#inputEmail.label-input__value
+                      input(type="text" name="email" required)#inputEmail.label-input__value
               .form__row
                 label.label-input(for="textarea")
                   .label-input__icon
                       +icon('message', '')
                   .label-input__data 
                     .label-input__title Сообщение к письму
-                    textarea#textarea.label-input__value
+                    textarea(name="text")#textarea.label-input__value
               .form__row
                 input(type="submit", value='Отправить')   
       footer.footer 
@@ -140,6 +140,8 @@ html(lang="ru")
                   .footer__quote Всегда пишите код так, будто сопровождать его будет склонный к насилию прихопат, который знает где вы живете
                   .footer__quote-autor Marthin Golding
     include ./templates/entry.pug
+    
+
 
 
 

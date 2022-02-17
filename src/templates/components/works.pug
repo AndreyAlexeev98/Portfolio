@@ -47,7 +47,7 @@ script(type='text/x-template')#slider-info
     .works-slider__desc
       p {{currentWork.desc}}
     .works-slider__link 
-      a(:href="currentWork.link").iconed-link
+      a(:href="currentWork.link" target='_blank').iconed-link
         +icon('link', 'iconed-link-icon')
         span Посмотреть сайт
 

@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "title": "1 Сайт школы онлайн образования",
-    "skills": "1 Html, Css, JavaScript",
-    "photo": "slider-1.jpg",
-    "link": "//google.com",
-    "desc": "1 Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+    "title": "Лендинг по продаже бургеров",
+    "skills": "Html, Css, JavaScript",
+    "photo": "workBurger.png",
+    "link": "https://andreyalexeev98.github.io/Burgers-project/",
+    "desc": "MrBurger разработан с использованием элемнтов: слайдер, аккордион, YouTube iframe, Api yandex map, модальное окно. Логика написана на чистом JS (ES6)"
   },
   {
     "id": 2,
-    "title": "2 Сайт школы онлайн образования",
-    "skills": "2 Html, Css",
-    "photo": "slider-2.jpg",
-    "link": "//yandex.ru",
-    "desc": "2 Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+    "title": "Сайт по продаже футболок",
+    "skills": "Html, Css, Jquery",
+    "photo": "workLostShirt.png",
+    "link": "https://andreyalexeev98.github.io/LostShirt/",
+    "desc": "Сайт LostShirt разработан с использованием JS библиотеки Jquery"
   },
   {
     "id": 3,
-    "title": "3 Сайт школы онлайн образования",
-    "skills": "3 Html, Css, JavaScript",
-    "photo": "slider-3.jpg",
-    "link": "//rambler.ru",
-    "desc": "3 Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+    "title": "Игра Memoji",
+    "skills": "Html, Css, JavaScript (ES5)",
+    "photo": "workMemoji.png",
+    "link": "https://andreyalexeev98.github.io/MemojiGame/",
+    "desc": "Данная игра разработана на vamilla JS, без использования библиотек. Попробуйте угадать все пары картокек за 1 минуту!"
   }
 ]
