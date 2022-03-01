@@ -5,7 +5,7 @@
     "skills": "Html, Css, JavaScript",
     "photo": "workBurger.png",
     "link": "https://andreyalexeev98.github.io/Burgers-project/",
-    "desc": "MrBurger разработан с использованием элемнтов: слайдер, аккордион, YouTube iframe, Api yandex map, модальное окно. Логика написана на чистом JS (ES6)"
+    "desc": "MrBurger разработан с использованием элементов: слайдер, аккордион, YouTube iframe, Api yandex map, модальное окно. Логика написана на чистом JS (ES6)"
   },
   {
     "id": 2,
@@ -21,6 +21,6 @@
     "skills": "Html, Css, JavaScript (ES5)",
     "photo": "workMemoji.png",
     "link": "https://andreyalexeev98.github.io/MemojiGame/",
-    "desc": "Данная игра разработана на vamilla JS, без использования библиотек. Попробуйте угадать все пары картокек за 1 минуту!"
+    "desc": "Данная игра разработана на vanilla JS, без использования библиотек. Попробуйте угадать все пары картокек за 1 минуту!"
   }
 ]

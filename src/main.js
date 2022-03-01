@@ -8,4 +8,4 @@ import "./scripts/works";
 import "./templates/components/sections/reviews/reviews.js";
 import "./scripts/scroll";
 import "./scripts/hamburgerMenu";
-import "./scripts/phpmailer";
+import "./scripts/sendForm";
